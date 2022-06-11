@@ -2,3 +2,4 @@
     remote = s3_remote
 ['remote "s3_remote"']
     url = s3://census-ml-pipeline-bucket
+    profile = personal-aws-profile
