@@ -12,23 +12,23 @@ WARN_COLOR = '\033[93m'
 
 def run_sanity_check(test_dir):
 
-    #assert path.isdir(test_dir), FAIL_COLOR+f"No direcotry named {test_dir} found in {os.getcwd()}"
+    #assert path.isdir(test_dir),FAIL_COLOR+f"No direcotry named {test_dir} found in {os.getcwd()}"
     print('This script will perform a sanity test to ensure your code meets the criteria in the rubric.\n')
     print('Please enter the path to the file that contains your test cases for the GET() and POST() methods')
     print('The path should be something like abc/def/test_xyz.py')
     filepath = input('> ')
 
-    assert path.exists(filepath), f"File {filepath} does not exist."
+    assert path.exists(filepath),f"File {filepath} does not exist."
     sys.path.append(path.dirname(filepath))
 
     module_name = path.splitext(path.basename(filepath))[0]
     module = importlib.import_module(module_name)
 
 
-    test_function_names = list(filter(lambda x: inspect.isfunction(getattr(module,x)) and not x.startswith('__'), dir(module)))
+    test_function_names = list(filter(lambda x: inspect.isfunction(getattr(module,x)) and not x.startswith('__'),dir(module)))
 
-    test_functions_for_get = list(filter(lambda x: inspect.getsource(getattr(module,x)).find('.get(') != -1 , test_function_names))
-    test_functions_for_post = list(filter(lambda x: inspect.getsource(getattr(module,x)).find('.post(') != -1, test_function_names))
+    test_functions_for_get = list(filter(lambda x: inspect.getsource(getattr(module,x)).find('.get(') != -1 ,test_function_names))
+    test_functions_for_post = list(filter(lambda x: inspect.getsource(getattr(module,x)).find('.post(') != -1,test_function_names))
     
 
     print("\n============= Sanity Check Report ===========")
@@ -108,7 +108,7 @@ def run_sanity_check(test_dir):
         if len(test_functions_for_post) >= 2 and COUNT_POST_METHOD_TEST_FOR_INFERENCE_RESULT < 2:
             print(FAIL_COLOR+f"[{WARNING_COUNT}]")
             WARNING_COUNT += 1
-            print(FAIL_COLOR+"You do not seem to have TWO separate test cases, one for each possible prediction that your model can make.")
+            print(FAIL_COLOR+"You do not seem to have TWO separate test cases,one for each possible prediction that your model can make.")
 
 
 
