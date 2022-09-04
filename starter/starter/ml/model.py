@@ -1,4 +1,28 @@
+import logging
+from typing import List
+
+import pandas as pd
+import numpy as np
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.linear_model import LogisticRegression
+from starter.starter.ml.data import process_data
+import pickle
+import os
+from pathlib import Path
+
+log = logging.getLogger(__name__)
+MODEL_PATH = os.path.join(Path(__file__).parent.parent.parent, "model")
+
+
+def save_model(model, file_name):
+    with open(os.path.join(MODEL_PATH, file_name), "wb") as f:
+        pickle.dump(model, f)
+
+
+def load_model(file_name):
+    with open(os.path.join(MODEL_PATH, file_name), "rb") as f:
+        model = pickle.load(f)
+        return model
 
 
 # Optional: implement hyperparameter tuning.
@@ -17,20 +41,22 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
+    model = LogisticRegression(class_weight='balanced', max_iter=200, random_state=42, solver="liblinear")
+    model.fit(X_train, y_train)
 
-    pass
+    return model
 
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using precision,recall,and F1.
 
     Inputs
     ------
     y : np.array
-        Known labels, binarized.
+        Known labels,binarized.
     preds : np.array
-        Predicted labels, binarized.
+        Predicted labels,binarized.
     Returns
     -------
     precision : float
@@ -43,7 +69,7 @@ def compute_model_metrics(y, preds):
     return precision, recall, fbeta
 
 
-def inference(model, X):
+def inference(model, X) -> np.ndarray:
     """ Run model inferences and return the predictions.
 
     Inputs
@@ -57,4 +83,19 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    preds = model.predict(X)
+
+    return preds
+
+
+def compute_model_metrics_slices(model, test_data: pd.DataFrame, categorical_features: List, encoder, lb, scaler):
+    for feature in categorical_features:
+        for feature_value in test_data[feature].unique():
+            df = test_data[test_data[feature] == feature_value]
+            X_test, y_test, encoder, lb, scaler = process_data(X=df, categorical_features=categorical_features, label='salary',
+                                                       training=False,
+                                                       encoder=encoder, lb=lb, scaler=scaler)
+            preds = inference(model, X_test)
+            precision, recall, fbeta = compute_model_metrics(y_test, preds)
+            log.info(f"Feature {feature}; feature value {feature_value} -> precision: {precision}, recall: {recall}, "
+                     f"fbeta: {fbeta}")
