@@ -40,7 +40,13 @@ jobs:
       - name: Set up DVC
         uses: iterative/setup-dvc@v1
       - name: Pull DVC data
-        run: dvc pull
+        env:
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        run: |
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile personal-aws-profile
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile personal-aws-profile
+          dvc pull -v
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
