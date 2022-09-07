@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pytest pandas sklearn numpy fastapi requests uvicorn
+          pip install flake8 pytest pandas sklearn==0.23.2 numpy fastapi requests uvicorn
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -40,12 +40,9 @@ jobs:
       - name: Set up DVC
         uses: iterative/setup-dvc@v1
       - name: Pull DVC data
-        env:
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         run: |
-          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile personal-aws-profile
-          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile personal-aws-profile
+          aws configure set aws_access_key_id ${{secrets.AWS_ACCESS_KEY_ID}} --profile personal-aws-profile
+          aws configure set aws_secret_access_key ${{secrets.AWS_SECRET_ACCESS_KEY}} --profile personal-aws-profile
           dvc pull -v
       - name: Lint with flake8
         run: |
