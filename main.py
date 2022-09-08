@@ -9,7 +9,7 @@ import os
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
-    os.system("dvc config core.hardlink_lock true")
+    # os.system("dvc config core.hardlink_lock true")
     os.system("aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile personal-aws-profile")
     os.system("aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile personal-aws-profile")
     if os.system("dvc pull") != 0:
