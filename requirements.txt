@@ -6,3 +6,4 @@ fastapi
 requests
 uvicorn
 dvc[s3]
+awscli
