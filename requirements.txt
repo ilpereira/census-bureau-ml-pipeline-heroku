@@ -1,0 +1,8 @@
+pytest
+pandas
+scikit-learn==0.23.2
+numpy
+fastapi
+requests
+uvicorn
+dvc[s3]
