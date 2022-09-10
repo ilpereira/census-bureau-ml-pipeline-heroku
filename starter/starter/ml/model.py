@@ -90,11 +90,13 @@ def inference(model, X) -> np.ndarray:
 
 def compute_model_metrics_slices(model, test_data: pd.DataFrame, categorical_features: List, encoder, lb, scaler):
     for feature in categorical_features:
+        log.info(f"------------------ Feature")
         for feature_value in test_data[feature].unique():
             df = test_data[test_data[feature] == feature_value]
-            X_test, y_test, encoder, lb, scaler = process_data(X=df, categorical_features=categorical_features, label='salary',
-                                                       training=False,
-                                                       encoder=encoder, lb=lb, scaler=scaler)
+            X_test, y_test, encoder, lb, scaler = process_data(X=df, categorical_features=categorical_features,
+                                                               label='salary',
+                                                               training=False,
+                                                               encoder=encoder, lb=lb, scaler=scaler)
             preds = inference(model, X_test)
             precision, recall, fbeta = compute_model_metrics(y_test, preds)
             log.info(f"Feature {feature}; feature value {feature_value} -> precision: {precision}, recall: {recall}, "

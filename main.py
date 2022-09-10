@@ -2,6 +2,7 @@ import pandas as pd
 from fastapi import FastAPI
 from starter.starter.ml.model import inference, load_model
 from starter.starter.ml.data import process_data
+from starter.starter.train_model import cat_features
 from pydantic import BaseModel, Field
 import uvicorn
 from typing import Union, List, Optional
@@ -20,17 +21,6 @@ model = load_model("logreg_model.pkl")
 encoder = load_model("encoder.pkl")
 label_binarizer = load_model("label_binarizer.pkl")
 scaler = load_model("scaler.pkl")
-
-cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
-]
 
 
 class CensusModel(BaseModel):

@@ -17,8 +17,10 @@ data_list = {"age": [31, 52], "workclass": ["Private", "Self-emp-not-inc"], "fnl
              "capital_gain": [0, 0], "capital_loss": [0, 0], "hours_per_week": [40, 45],
              "native_country": ["United-States", "United-States"]}
 
-# url = "http://127.0.0.1:8000/inference/"
 url = "https://census-bureau-ml-pipeline.herokuapp.com/inference/"
+req = requests.post(url=url, data=json.dumps(data_1))
+print(req.json())
+req = requests.post(url=url, data=json.dumps(data_2))
+print(req.json())
 req = requests.post(url=url, data=json.dumps(data_list))
-
 print(req.json())
