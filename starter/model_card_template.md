@@ -20,8 +20,10 @@ features and a label binarizer were used for data processing.
 
 ## Metrics
 _Please include the metrics used and your model's performance on those metrics._
-The model was evaluated using precision, recall and F1 score. The value obtained for these metrics were , respectively.
+The model was evaluated using precision, recall and F1 score. The value obtained for these metrics on the test set were 
+0.572234273318872, 0.8395926161680458 and 0.6805985552115582, respectively.
 
 ## Ethical Considerations
+
 
 ## Caveats and Recommendations

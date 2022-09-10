@@ -12,6 +12,7 @@ from pathlib import Path
 
 log = logging.getLogger(__name__)
 MODEL_PATH = os.path.join(Path(__file__).parent.parent.parent, "model")
+PROJECT_ROOT_DIR = Path(__file__).parent.parent.parent
 
 
 def save_model(model, file_name):
@@ -76,7 +77,7 @@ def inference(model, X) -> np.ndarray:
     ------
     model : ???
         Trained machine learning model.
-    X : np.array
+    X : np.ndarray
         Data used for prediction.
     Returns
     -------
@@ -89,15 +90,19 @@ def inference(model, X) -> np.ndarray:
 
 
 def compute_model_metrics_slices(model, test_data: pd.DataFrame, categorical_features: List, encoder, lb, scaler):
-    for feature in categorical_features:
-        log.info(f"------------------ Feature")
-        for feature_value in test_data[feature].unique():
-            df = test_data[test_data[feature] == feature_value]
-            X_test, y_test, encoder, lb, scaler = process_data(X=df, categorical_features=categorical_features,
-                                                               label='salary',
-                                                               training=False,
-                                                               encoder=encoder, lb=lb, scaler=scaler)
-            preds = inference(model, X_test)
-            precision, recall, fbeta = compute_model_metrics(y_test, preds)
-            log.info(f"Feature {feature}; feature value {feature_value} -> precision: {precision}, recall: {recall}, "
-                     f"fbeta: {fbeta}")
+    performance_metrics_output_file = os.path.join(PROJECT_ROOT_DIR, 'slice_output.txt')
+    with open(performance_metrics_output_file, 'w') as f:
+        for feature in categorical_features:
+            log.info(f"------------------ Feature '{feature}' ------------------")
+            f.write(f"------------------ Feature '{feature}' ------------------\n")
+            for feature_value in test_data[feature].unique():
+                df = test_data[test_data[feature] == feature_value]
+                X_test, y_test, encoder, lb, scaler = process_data(X=df, categorical_features=categorical_features,
+                                                                   label='salary',
+                                                                   training=False,
+                                                                   encoder=encoder, lb=lb, scaler=scaler)
+                preds = inference(model, X_test)
+                precision, recall, fbeta = compute_model_metrics(y_test, preds)
+                log.info(f"Feature value '{feature_value}' -> precision: {precision}, recall: {recall}, fbeta: {fbeta}")
+                f.write(f"Feature value '{feature_value}' -> precision: {precision}, recall: {recall}, fbeta: {fbeta}\n")
+            f.write("\n")

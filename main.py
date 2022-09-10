@@ -24,20 +24,20 @@ scaler = load_model("scaler.pkl")
 
 
 class CensusModel(BaseModel):
-    age: Optional[Union[int, List[int]]]
-    workclass: Optional[Union[str, List[str]]]
-    fnlgt: Optional[Union[int, List[int]]]
-    education: Optional[Union[str, List[str]]]
-    education_num: Optional[Union[int, List[int]]] = Field(alias="education-num")
-    marital_status: Optional[Union[str, List[str]]] = Field(alias="marital-status")
-    occupation: Optional[Union[str, List[str]]]
-    relationship: Optional[Union[str, List[str]]]
-    race: Optional[Union[str, List[str]]]
-    sex: Optional[Union[str, List[str]]]
-    capital_gain: Optional[Union[int, List[int]]] = Field(alias="capital-gain")
-    capital_loss: Optional[Union[int, List[int]]] = Field(alias="capital-loss")
-    hours_per_week: Optional[Union[float, List[float]]] = Field(alias="hours-per-week")
-    native_country: Optional[Union[str, List[str]]] = Field(alias="native-country")
+    age: Union[int, List[int]]
+    workclass: Union[str, List[str]]
+    fnlgt: Union[int, List[int]]
+    education: Union[str, List[str]]
+    education_num: Union[int, List[int]] = Field(alias="education-num")
+    marital_status: Union[str, List[str]] = Field(alias="marital-status")
+    occupation: Union[str, List[str]]
+    relationship: Union[str, List[str]]
+    race: Union[str, List[str]]
+    sex: Union[str, List[str]]
+    capital_gain: Union[int, List[int]] = Field(alias="capital-gain")
+    capital_loss: Union[int, List[int]] = Field(alias="capital-loss")
+    hours_per_week: Union[float, List[float]] = Field(alias="hours-per-week")
+    native_country: Union[str, List[str]] = Field(alias="native-country")
 
     class Config:
         schema_extra = {

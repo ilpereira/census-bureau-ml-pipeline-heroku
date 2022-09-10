@@ -1,0 +1,115 @@
+------------------ Feature 'workclass' ------------------
+Feature value 'Private' -> precision: 0.5660630449362843, recall: 0.8431568431568431, fbeta: 0.6773675762439807
+Feature value 'State-gov' -> precision: 0.5887850467289719, recall: 0.863013698630137, fbeta: 0.7
+Feature value 'Self-emp-not-inc' -> precision: 0.5, recall: 0.7643312101910829, fbeta: 0.6045340050377834
+Feature value 'Self-emp-inc' -> precision: 0.6625766871165644, recall: 0.9152542372881356, fbeta: 0.7686832740213523
+Feature value 'Federal-gov' -> precision: 0.5849056603773585, recall: 0.8857142857142857, fbeta: 0.7045454545454545
+Feature value 'Local-gov' -> precision: 0.6513157894736842, recall: 0.9, fbeta: 0.7557251908396946
+Feature value '?' -> precision: 0.5, recall: 0.5476190476190477, fbeta: 0.5227272727272727
+Feature value 'Without-pay' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+
+------------------ Feature 'education' ------------------
+Feature value 'Some-college' -> precision: 0.4935897435897436, recall: 0.8339350180505415, fbeta: 0.6201342281879195
+Feature value 'HS-grad' -> precision: 0.44101633393829404, recall: 0.7043478260869566, fbeta: 0.5424107142857143
+Feature value 'Bachelors' -> precision: 0.6672185430463576, recall: 0.8955555555555555, fbeta: 0.7647058823529412
+Feature value 'Masters' -> precision: 0.7234848484848485, recall: 0.9227053140096618, fbeta: 0.8110403397027601
+Feature value 'Assoc-acdm' -> precision: 0.5308641975308642, recall: 0.9148936170212766, fbeta: 0.671875
+Feature value '7th-8th' -> precision: 0.14285714285714285, recall: 0.16666666666666666, fbeta: 0.15384615384615383
+Feature value '11th' -> precision: 0.5, recall: 0.5454545454545454, fbeta: 0.5217391304347826
+Feature value 'Assoc-voc' -> precision: 0.47368421052631576, recall: 0.8571428571428571, fbeta: 0.6101694915254237
+Feature value 'Prof-school' -> precision: 0.8058252427184466, recall: 0.9880952380952381, fbeta: 0.8877005347593583
+Feature value '9th' -> precision: 0.3333333333333333, recall: 0.3333333333333333, fbeta: 0.3333333333333333
+Feature value '5th-6th' -> precision: 1.0, recall: 0.25, fbeta: 0.4
+Feature value '10th' -> precision: 0.1875, recall: 0.25, fbeta: 0.21428571428571427
+Feature value 'Doctorate' -> precision: 0.7777777777777778, recall: 0.9824561403508771, fbeta: 0.8682170542635659
+Feature value '12th' -> precision: 0.3333333333333333, recall: 0.6, fbeta: 0.42857142857142855
+Feature value '1st-4th' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Preschool' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+
+------------------ Feature 'marital-status' ------------------
+Feature value 'Divorced' -> precision: 0.5631067961165048, recall: 0.5631067961165048, fbeta: 0.5631067961165048
+Feature value 'Married-civ-spouse' -> precision: 0.5741187831965234, recall: 0.9034954407294833, fbeta: 0.7020962503690582
+Feature value 'Never-married' -> precision: 0.5274725274725275, recall: 0.46601941747572817, fbeta: 0.4948453608247423
+Feature value 'Separated' -> precision: 0.7692307692307693, recall: 0.5263157894736842, fbeta: 0.625
+Feature value 'Widowed' -> precision: 0.5833333333333334, recall: 0.3684210526315789, fbeta: 0.4516129032258065
+Feature value 'Married-spouse-absent' -> precision: 0.36363636363636365, recall: 0.5, fbeta: 0.4210526315789474
+Feature value 'Married-AF-spouse' -> precision: 0.75, recall: 1.0, fbeta: 0.8571428571428571
+
+------------------ Feature 'occupation' ------------------
+Feature value 'Adm-clerical' -> precision: 0.4723926380368098, recall: 0.8020833333333334, fbeta: 0.5945945945945946
+Feature value 'Exec-managerial' -> precision: 0.6600719424460432, recall: 0.924433249370277, fbeta: 0.770199370409234
+Feature value 'Machine-op-inspct' -> precision: 0.3026315789473684, recall: 0.48936170212765956, fbeta: 0.37398373983739835
+Feature value 'Craft-repair' -> precision: 0.47648902821316613, recall: 0.8397790055248618, fbeta: 0.608
+Feature value 'Prof-specialty' -> precision: 0.703030303030303, recall: 0.8877551020408163, fbeta: 0.7846674182638106
+Feature value 'Sales' -> precision: 0.5616883116883117, recall: 0.9010416666666666, fbeta: 0.6920000000000001
+Feature value 'Handlers-cleaners' -> precision: 0.35, recall: 0.5833333333333334, fbeta: 0.4375
+Feature value 'Other-service' -> precision: 0.3, recall: 0.34615384615384615, fbeta: 0.32142857142857145
+Feature value 'Protective-serv' -> precision: 0.4868421052631579, recall: 0.8809523809523809, fbeta: 0.6271186440677966
+Feature value 'Priv-house-serv' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Transport-moving' -> precision: 0.44660194174757284, recall: 0.71875, fbeta: 0.5508982035928144
+Feature value '?' -> precision: 0.5, recall: 0.5476190476190477, fbeta: 0.5227272727272727
+Feature value 'Farming-fishing' -> precision: 0.3225806451612903, recall: 0.35714285714285715, fbeta: 0.3389830508474576
+Feature value 'Tech-support' -> precision: 0.5679012345679012, recall: 0.9019607843137255, fbeta: 0.6969696969696969
+Feature value 'Armed-Forces' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+
+------------------ Feature 'relationship' ------------------
+Feature value 'Not-in-family' -> precision: 0.544973544973545, recall: 0.5478723404255319, fbeta: 0.5464190981432361
+Feature value 'Wife' -> precision: 0.5365853658536586, recall: 0.9230769230769231, fbeta: 0.6786632390745502
+Feature value 'Husband' -> precision: 0.5814081408140814, recall: 0.9034188034188034, fbeta: 0.7074966532797858
+Feature value 'Unmarried' -> precision: 0.5588235294117647, recall: 0.4222222222222222, fbeta: 0.48101265822784806
+Feature value 'Own-child' -> precision: 0.4444444444444444, recall: 0.23529411764705882, fbeta: 0.30769230769230765
+Feature value 'Other-relative' -> precision: 0.4444444444444444, recall: 0.5, fbeta: 0.47058823529411764
+
+------------------ Feature 'race' ------------------
+Feature value 'White' -> precision: 0.5705492424242424, recall: 0.8438375350140056, fbeta: 0.6807909604519775
+Feature value 'Black' -> precision: 0.5824175824175825, recall: 0.8153846153846154, fbeta: 0.6794871794871795
+Feature value 'Other' -> precision: 0.5714285714285714, recall: 0.6666666666666666, fbeta: 0.6153846153846153
+Feature value 'Asian-Pac-Islander' -> precision: 0.6219512195121951, recall: 0.8225806451612904, fbeta: 0.7083333333333333
+Feature value 'Amer-Indian-Eskimo' -> precision: 0.46153846153846156, recall: 0.6, fbeta: 0.5217391304347826
+
+------------------ Feature 'sex' ------------------
+Feature value 'Female' -> precision: 0.5331125827814569, recall: 0.6909871244635193, fbeta: 0.6018691588785046
+Feature value 'Male' -> precision: 0.5781328007988018, recall: 0.8654708520179372, fbeta: 0.6932056270577672
+
+------------------ Feature 'native-country' ------------------
+Feature value 'United-States' -> precision: 0.5725806451612904, recall: 0.8411149825783972, fbeta: 0.681343494213943
+Feature value 'Mexico' -> precision: 0.2, recall: 0.3333333333333333, fbeta: 0.25
+Feature value 'Puerto-Rico' -> precision: 0.8333333333333334, recall: 0.8333333333333334, fbeta: 0.8333333333333334
+Feature value 'El-Salvador' -> precision: 0.3333333333333333, recall: 1.0, fbeta: 0.5
+Feature value '?' -> precision: 0.4888888888888889, recall: 0.7096774193548387, fbeta: 0.5789473684210527
+Feature value 'Columbia' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Poland' -> precision: 0.2857142857142857, recall: 1.0, fbeta: 0.4444444444444445
+Feature value 'Cambodia' -> precision: 0.5, recall: 1.0, fbeta: 0.6666666666666666
+Feature value 'Germany' -> precision: 0.75, recall: 0.9230769230769231, fbeta: 0.8275862068965517
+Feature value 'Philippines' -> precision: 0.8125, recall: 0.8125, fbeta: 0.8125
+Feature value 'Canada' -> precision: 0.5714285714285714, recall: 1.0, fbeta: 0.7272727272727273
+Feature value 'Ecuador' -> precision: 1.0, recall: 0.5, fbeta: 0.6666666666666666
+Feature value 'Italy' -> precision: 0.4444444444444444, recall: 1.0, fbeta: 0.6153846153846153
+Feature value 'Cuba' -> precision: 0.5714285714285714, recall: 0.8, fbeta: 0.6666666666666666
+Feature value 'Iran' -> precision: 0.6666666666666666, recall: 0.8, fbeta: 0.7272727272727272
+Feature value 'Jamaica' -> precision: 0.0, recall: 1.0, fbeta: 0.0
+Feature value 'Haiti' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'South' -> precision: 0.2, recall: 0.5, fbeta: 0.28571428571428575
+Feature value 'Taiwan' -> precision: 0.6666666666666666, recall: 1.0, fbeta: 0.8
+Feature value 'Dominican-Republic' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Ireland' -> precision: 0.5, recall: 1.0, fbeta: 0.6666666666666666
+Feature value 'Japan' -> precision: 0.6, recall: 0.75, fbeta: 0.6666666666666665
+Feature value 'Scotland' -> precision: 0.0, recall: 1.0, fbeta: 0.0
+Feature value 'India' -> precision: 0.7272727272727273, recall: 1.0, fbeta: 0.8421052631578948
+Feature value 'Trinadad&Tobago' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Hungary' -> precision: 0.5, recall: 0.5, fbeta: 0.5
+Feature value 'England' -> precision: 0.8, recall: 1.0, fbeta: 0.888888888888889
+Feature value 'Laos' -> precision: 1.0, recall: 0.0, fbeta: 0.0
+Feature value 'Hong' -> precision: 0.5, recall: 1.0, fbeta: 0.6666666666666666
+Feature value 'Greece' -> precision: 0.6666666666666666, recall: 1.0, fbeta: 0.8
+Feature value 'Portugal' -> precision: 0.0, recall: 1.0, fbeta: 0.0
+Feature value 'Guatemala' -> precision: 0.0, recall: 1.0, fbeta: 0.0
+Feature value 'China' -> precision: 0.8, recall: 1.0, fbeta: 0.888888888888889
+Feature value 'France' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Nicaragua' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Vietnam' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Thailand' -> precision: 0.0, recall: 1.0, fbeta: 0.0
+Feature value 'Peru' -> precision: 1.0, recall: 0.0, fbeta: 0.0
+Feature value 'Honduras' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+Feature value 'Yugoslavia' -> precision: 1.0, recall: 1.0, fbeta: 1.0
+
