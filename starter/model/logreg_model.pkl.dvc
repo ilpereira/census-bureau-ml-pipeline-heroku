@@ -1,0 +1,4 @@
+outs:
+- md5: c02d6a02f7341d5bf48ba93f898ff82d
+  size: 1591
+  path: logreg_model.pkl

@@ -8,6 +8,17 @@ from starter.starter.ml.model import train_model, compute_model_metrics, inferen
 
 PROJECT_ROOT_DIR = Path(__file__).parent.parent.parent
 
+cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+
 if __name__ == "__main__":
     log.basicConfig(
         format="[%(asctime)s][%(filename)s:%(lineno)d][%(levelname)s] %(message)s",
@@ -22,17 +33,6 @@ if __name__ == "__main__":
     train_data, test_data = train_test_split(data, test_size=0.20, random_state=42)
     save_data(train_data, "train_data.csv")
     save_data(test_data, "test_data.csv")
-
-    cat_features = [
-        "workclass",
-        "education",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-country",
-    ]
 
     X_train, y_train, encoder, lb, scaler = process_data(
         train_data, categorical_features=cat_features, label="salary", training=True
