@@ -42,20 +42,20 @@ class CensusModel(BaseModel):
     class Config:
         schema_extra = {
             "example": {
-                "age": [31, 37],
-                "workclass": ["Private", "Federal-gov"],
-                "fnlgt": [125421, 16235],
-                "education": ["Bachelors", "HS-grad"],
-                "education_num": [8, 14],
-                "marital_status": ["Divorced", "Married-civ-spouse"],
-                "occupation": ["", ""],
-                "relationship": ["Unmarried", "Wife"],
-                "race": ["Asian-Pac-Islander", "Black"],
-                "sex": ["Male", "Female"],
-                "capital_gain": [0, 5013],
-                "capital_loss": [0, 0],
-                "hours_per_week": [40, 35],
-                "native_country": ["India", "United-States"]
+                "age": 31,
+                "workclass": "Private",
+                "fnlgt": 125421,
+                "education": "Bachelors",
+                "education_num": 8,
+                "marital_status": "Divorced",
+                "occupation": "Sales",
+                "relationship": "Unmarried",
+                "race": "Asian-Pac-Islander",
+                "sex": "Male",
+                "capital_gain": 0,
+                "capital_loss": 0,
+                "hours_per_week": 40,
+                "native_country": "India"
             }
         }
         allow_population_by_field_name = True
